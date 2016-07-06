@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InstaShow", "InstaShow\InstaShow.csproj", "{F3B2FD28-F0F3-4C7A-AF79-E6710FA3187E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InstaShow.Tests", "InstaShow.Tests\InstaShow.Tests.csproj", "{168AC6EB-DFC4-4460-9CB2-2ED75F8D5C1C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F3B2FD28-F0F3-4C7A-AF79-E6710FA3187E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3B2FD28-F0F3-4C7A-AF79-E6710FA3187E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3B2FD28-F0F3-4C7A-AF79-E6710FA3187E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3B2FD28-F0F3-4C7A-AF79-E6710FA3187E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{168AC6EB-DFC4-4460-9CB2-2ED75F8D5C1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{168AC6EB-DFC4-4460-9CB2-2ED75F8D5C1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{168AC6EB-DFC4-4460-9CB2-2ED75F8D5C1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{168AC6EB-DFC4-4460-9CB2-2ED75F8D5C1C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
