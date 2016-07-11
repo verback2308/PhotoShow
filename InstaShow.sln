@@ -7,6 +7,30 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InstaShow", "InstaShow\Inst
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InstaShow.Tests", "InstaShow.Tests\InstaShow.Tests.csproj", "{168AC6EB-DFC4-4460-9CB2-2ED75F8D5C1C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{592FC8AC-0003-406F-BFBE-D244F55E3C99}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "App", "App\", "{4B11F6C5-371B-4B4F-AFD1-3CEEFBE85193}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5.2"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_14609"
+		Debug.AspNetCompiler.PhysicalPath = "App\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_14609\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_14609"
+		Release.AspNetCompiler.PhysicalPath = "App\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_14609\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "14609"
+		SlnRelativePath = "App\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +45,14 @@ Global
 		{168AC6EB-DFC4-4460-9CB2-2ED75F8D5C1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{168AC6EB-DFC4-4460-9CB2-2ED75F8D5C1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{168AC6EB-DFC4-4460-9CB2-2ED75F8D5C1C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{592FC8AC-0003-406F-BFBE-D244F55E3C99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{592FC8AC-0003-406F-BFBE-D244F55E3C99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{592FC8AC-0003-406F-BFBE-D244F55E3C99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{592FC8AC-0003-406F-BFBE-D244F55E3C99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B11F6C5-371B-4B4F-AFD1-3CEEFBE85193}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B11F6C5-371B-4B4F-AFD1-3CEEFBE85193}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B11F6C5-371B-4B4F-AFD1-3CEEFBE85193}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B11F6C5-371B-4B4F-AFD1-3CEEFBE85193}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
