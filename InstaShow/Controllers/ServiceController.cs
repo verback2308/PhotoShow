@@ -8,6 +8,7 @@ using InstaSharp;
 using InstaSharp.Models;
 using InstaSharp.Models.Responses;
 using Core.Models;
+using InstaShow.Hubs;
 
 namespace InstaShow.Controllers
 {
@@ -28,7 +29,7 @@ namespace InstaShow.Controllers
             var oaresponse = new OAuthResponse();
             oaresponse.AccessToken = "951704014.d6c569c.2b1b3f048cef474da358cbeb7b4f9658";
             oaresponse.User = new User();
-            var tagsMedia = new InstaSharp.Endpoints.Tags(config, oaresponse).Recent("testformyownproject", String.Empty, String.Empty, 3);
+            var tagsMedia = new InstaSharp.Endpoints.Tags(config, oaresponse).Recent("testformyownproject", String.Empty, String.Empty, 20);
             var response = await tagsMedia;
             var feedList = response.Data.Select(gram => new Feed
             {
@@ -36,21 +37,18 @@ namespace InstaShow.Controllers
             }).ToList();
             return View(feedList);
         }
-        public async Task<ActionResult> Refresh()
+
+        public void Refresh()
         {
-            var config = new InstagramConfig("d6c569c43fd94fb59c0069e176dff7c5", "9752eaf10f5f42cea37210b8ade4e0b3", "http://localhost:12888/service/Index");
-            var oaresponse = new OAuthResponse();
-            oaresponse.AccessToken = "951704014.d6c569c.2b1b3f048cef474da358cbeb7b4f9658";
-            oaresponse.User = new User();
-            var tagsMedia = new InstaSharp.Endpoints.Tags(config, oaresponse).Recent("testformyownproject");
-            var response = await tagsMedia;
-            var feedList = response.Data.Select(gram => new Feed
-            {
-                PhotoUrl = gram.Images.StandardResolution.Url,
-                Description = gram.Caption.Text,
-                Likes = gram.Likes.Count
-            }).ToList();
-            return Json(feedList, JsonRequestBehavior.AllowGet);
+            SendMessage("Test");
+        }
+
+        private void SendMessage(string message)
+        {
+            var context =
+                Microsoft.AspNet.SignalR.GlobalHost.ConnectionManager.GetHubContext<NotificationHub>();
+            // отправляем сообщение
+            context.Clients.All.displayMessage(message);
         }
     }
 }

@@ -8,10 +8,12 @@
 <html>
 <head>
     <!-- Bootstrap Core CSS -->
-    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://use.fontawesome.com/26919b7717.js"></script>
     <!-- Custom CSS -->
-    <link href="../../css/full-slider.css" rel="stylesheet">
+    <link href="~/css/full-slider.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="~/css/slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/slick/slick-theme.css" />
     <meta name="viewport" content="width=device-width" />
     <title>Index</title>
 </head>
@@ -29,7 +31,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-12 vcenter">
+                <div class="col-md-12 vcenter photos">
                     @foreach (var item in Model)
                     {
                         <div class="col-sm-6 col-md-4">
@@ -46,8 +48,7 @@
                                             </h3>
                                         </div>
                                     </div>
-                                    <p>@item.Description</p>
-                                    <p> </p>
+                                    <h5><p>@item.Description</p></h5>
                                 </div>
                             </div>
                         </div>
@@ -62,9 +63,10 @@
 
 
 
-    <script src="../../scripts/jquery.js"></script>
+    <script src="~/scripts/jquery.js"></script>
     <script src="//twemoji.maxcdn.com/twemoji.min.js"></script>
-    <script src="../../scripts/bootstrap.min.js"></script>
+<script src="~/scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/css/slick/slick.min.js"></script>
 </body>
 </html>
 <script>
@@ -73,6 +75,21 @@
             console.log(str_replace("#access_token=", "", document.location.hash));
         twemoji.size = '16x16';
         twemoji.parse(document.body);
+        var screen = document.body.clientWidth / document.body.clientHeight;
+        var slides = 0;
+        if (screen < 1.6)
+            slides = 2;
+        else
+            slides = 3;
+        $('.photos').slick({
+            infinite: true,
+            slidesToShow: slides,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 2000,
+            arrows: false
+        });
+
     });
     function str_replace(search, replace, subject) {
         return subject.split(search).join(replace);

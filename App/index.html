@@ -1,14 +1,71 @@
-﻿<!doctype html>
-<html ng-app>
-<head>
-    <meta charset="utf-8">
+﻿
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head data-set-style-sheet="style_sheet">
+    <meta charset="UTF-8">
+    <title>Instagram-трансляция по тегу #picnicafisha — Instashow</title>
+    <meta name="description" content="Инсташоу — это сервис для организации Instagram-трансляций для мероприятий: свадеб, корпоративов, дней рождений. Попробуй Instashow бесплатно!">
+    <link href="http://andrey.intouchclub.ru/instashow/app/assets/1.css" rel="stylesheet">
+    <link href="http://andrey.intouchclub.ru/instashow/app/assets/2.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css" />
+    <meta name="viewport" content="width=device-width">
+    <link rel="shortcut icon" href="favicon.ico">
+    <style type="text/css">
+        body {
+            text-shadow: 0px 0px 1px #909090 !important;
+        }
+    </style>
 </head>
-<body>
-    <label>Введите имя:</label>
-    <input type="text" ng-model="name" placeholder="Введите имя">
+<body data-set-background-color="color_bg" class="full-screen">
+    <div class="wrap">
+        <div id="main-container" class="container main-container dialog-exists  " data-set-background-color="color_bg" data-set-pattern="pattern">
+            <div class="modal-backdrop fade" style="display: none;"></div>
 
-    <h1>Добро пожаловать {{name}}!</h1>
+            <div id="alert-no-photos" class="show-alert show-alert-inshow" style="display: block;">
+                <div class="vertical-centering">
+                    <div class="photo-show-sources">
+                        <div><img src="https://placeholdit.imgix.net/~text?txtsize=72&txt=1&w=1080&h=1080"/></div>
+                        <div><img src="https://placeholdit.imgix.net/~text?txtsize=72&txt=2&w=1080&h=1080" /></div>
+                        <div><img src="https://placeholdit.imgix.net/~text?txtsize=72&txt=3&w=1080&h=1080" /></div>
+                        <div><img src="https://placeholdit.imgix.net/~text?txtsize=72&txt=4&w=1080&h=1080" /></div>
+                        <div><img src="https://placeholdit.imgix.net/~text?txtsize=72&txt=5&w=1080&h=1080" /></div>
+                        <div><img src="https://placeholdit.imgix.net/~text?txtsize=72&txt=6&w=1080&h=1080" /></div>
+                    </div>
+                </div>
+            </div>
 
-    <script src="js/angular.min.js"></script>
+            <div class="row header">
+                <h1 id="title" data-set-color="color_title">
+                    <span class="fui-instagram h1-icon"></span>
+                    #afishapicnic
+                </h1>
+                <h6 id="description" data-set-text-emoji="description" data-set-color="color_description"></h6>
+
+                <a href="/" class="instashow_badge" style="display: none;" data-set-toggle-state="badge">
+                    <p>Транслируется при помощи<br><span class="logo"><span class="ii-logo"></span> INSTASHOW.RU</span></p>
+                </a>
+                <div class="show_wrapper">
+
+                    <section class="show_preload" style="display: none"></section>
+                    <section class="show_stream" show_id="524" show_tag="picnicafisha" on_screen="3" desc_lines="2" style=""><ul class="show_stream_list"></ul><ul class="show_stream_list"></ul><ul class="show_stream_list"></ul><ul class="show_stream_list"></ul></section>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="slick/slick.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.photo-show-sources').slick({
+                infinite: true,
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 2000
+            });
+        });
+    </script>
 </body>
 </html>
